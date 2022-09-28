@@ -1,0 +1,193 @@
+:root {
+    --x: 50%;
+    --y: 50%;
+    --z: 0px;
+}
+body {
+    background: rgb(35, 35, 35);
+    color: white;
+    perspective: 1000px;
+    perspective-origin: 10% 50%;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar { width: 10px; }
+body::-webkit-scrollbar-track { background: rgb(255, 255, 255); }
+body::-webkit-scrollbar-thumb { background: rgb(0, 25, 106); }
+.card {
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    /* animation: rodar 2s 1 linear; */
+    width: 90%;
+    height: 80vh;
+    color: black;
+    transition: 1s;
+    margin: 0 auto;
+}
+.pag {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    text-align: justify;
+    position: absolute;
+    overflow-y: scroll;
+}
+.pag::-webkit-scrollbar { width: 10px; }
+.pag::-webkit-scrollbar-track { background: rgb(255, 255, 255); }
+.pag::-webkit-scrollbar-thumb { background-color: rgb(0, 25, 106); }
+.pag > p {
+    padding: 10px;
+    font-size: 16pt;
+}
+.pag-frente {
+    background: lightblue;
+    transform: rotateY(0deg) translateZ(.1px);
+    box-shadow: inset rgb(0, 187, 255) 0px 0px 50px;
+}
+.pag-verso {
+    box-shadow: inset rgb(0, 187, 255) 0px 0px 50px;
+    background: lightblue;
+    transform: rotateY(180deg);
+}
+
+@keyframes rodar {
+    0% {
+        transform: rotateY(0deg) scale(1);
+    }
+    100% {
+        transform: rotateY(360deg) scale(1);
+    }
+}
+
+.form_pesquisa {
+    max-width: 500px;
+    height: max-content;
+    display: block;
+    margin: 0 auto;
+}
+.form_pesquisa > input,
+.form_pesquisa > button {
+    display: inline-block;
+}
+.buscar {
+    min-width: 15px;
+    min-height: 15px;
+    padding: 10px;
+    font-size: 16pt;
+    width: 70%;
+    outline: none;
+    overflow: none;
+    border: white solid 1px;
+}
+.btn {
+    width: 22%;
+    min-width: 15px;
+    min-height: 15px;
+    padding: 10px;
+    margin: 0px;
+    font-size: 16pt;
+    border: white solid 1px;
+}
+.btn:hover {
+    background: rgb(196, 196, 196);
+}
+.destaque {
+    background: yellow;
+    padding: 2px;
+}
+
+/* parte do brainstorming */
+.brainstorming {
+    padding: 20px;
+    padding-bottom: 50px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 50px;
+}
+.brainstorming > span {
+    background:rgb(0, 25, 106);
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    text-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+}
+.brainstorming > span > .palavra {
+    padding: 10px;
+    background: transparent;
+    color: white;
+}
+.brainstorming > span > .traducao {
+    padding: 10px;
+    background: transparent;
+    color: white;
+    display: none;
+}
+#destaque {
+    background: rgb(255, 136, 0);
+    border-radius: 20px;
+    animation: pular 1.5s infinite ease-out;
+    display: inline-block;
+    transform-style: preserve-3d;
+}
+@keyframes pular {
+    0%, 100% { 
+        transform: translateY(10px) scaleY(1) rotateX(30deg);
+        box-shadow: 0px 0px 0px black;
+    }
+    50% { 
+        transform: translateY(-20px) scaleY(1) rotateX(0deg); 
+        animation-timing-function: ease-in; 
+        box-shadow: 0px 30px 0px black;
+    }
+}
+.brainstorming > span > .quantidade {
+    margin-left: -10px;
+    padding: 10px;
+    border-left: solid 2px rgb(255, 255, 255);
+    background: rgb(2 146 161);
+    color: white;
+    border-radius: 50%;
+}
+
+/* parte do formulário do texto */
+
+.form_texto {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px black;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+.form_texto > textarea {
+    padding: 10px;
+    outline: none;
+    overflow: none;
+    font-size: 14pt;
+    overflow-y: scroll;
+    width: 97%;
+}
+.form_texto > textarea::-webkit-scrollbar { width: 10px; }
+.form_texto > textarea::-webkit-scrollbar-track { background: rgb(255, 255, 255); }
+.form_texto > textarea::-webkit-scrollbar-thumb { background-color: rgb(0, 25, 106); }
+
+/* formatando dbclick */
+.dbclick {
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    background: rgb(163, 65, 0);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: justify;
+    user-select: none;
+    box-shadow: 2px 2px 5px rgb(67, 67, 67);
+}
