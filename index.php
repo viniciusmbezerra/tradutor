@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <h1>Cole aqui o texto em inglês</h1>
+
     <form action="home.php" method="post" class="form_texto">
         <textarea name="texto" id="texto" cols="54" rows="20"></textarea><br>
         <button class="btn">Enviar</button>
